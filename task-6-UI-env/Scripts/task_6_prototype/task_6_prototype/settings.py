@@ -1,3 +1,10 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Manages the settings for the Django Back-end.
+#
+# @author   Allan DeBoe
+# @date     October 1st, 2022
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 """
 Django settings for task_6_prototype project.
 
@@ -37,6 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',               # for djangorestframework
+    'prototype',                    # for the prototype
+    'corsheaders',                  # for django-cors-headers
 ]
 
 MIDDLEWARE = [
@@ -47,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',                    # for django-cors-headers
 ]
 
 ROOT_URLCONF = 'task_6_prototype.urls'
@@ -121,3 +132,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Loosens restrictions on the REST framework
+# based on https://www.geeksforgeeks.org/how-to-connect-django-with-reactjs/
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSIONS_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
+
+# Loosens restrictions on Cross-Origin Resource Sharing.
+# based on https://www.geeksforgeeks.org/how-to-connect-django-with-reactjs/
+CORS_ORIGIN_ALLOW_ALL = True
