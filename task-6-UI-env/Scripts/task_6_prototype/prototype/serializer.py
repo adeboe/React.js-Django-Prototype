@@ -1,5 +1,5 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Governs the models used by the web application. Also makes it easier
+# Deals with serializing data. Also makes it easier
 # to incorporate React.js to the overall project. 
 #
 # References:
@@ -8,9 +8,10 @@
 # @author   Allan DeBoe
 # @date     October 2nd, 2022
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from django.db import models
+from rest_framework import serializers
+from . models import *
 
-# Create your models here.
-class React(models.Model):
-    description = models.CharField(max_length=2048)
-    condition = models.CharField(max_length=256)
+class ReactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = React
+        fields = ['description','condition']
