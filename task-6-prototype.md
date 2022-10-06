@@ -35,3 +35,13 @@ django-admin startproject task_6_prototype
 cd task_6_prototype
 py manage.py startapp prototype
 ```
+
+## Front-end (React.js)
+
+### Create React App
+
+```
+npx create-react-app task-6-ui-front-end
+cd task-6-ui-front-end
+npm install axios
+```
