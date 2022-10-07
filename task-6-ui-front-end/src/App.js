@@ -29,7 +29,7 @@ class App extends React.Component {
 		
 		let data;
 		
-		axios.get('') // Our Django Web Server
+		axios.get('http://localhost:8000/react-test/') // Our Django Web Server
 		.then(response => {
 			data = response.data;
 			this.setCurrentState({
