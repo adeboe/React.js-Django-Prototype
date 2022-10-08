@@ -25,12 +25,12 @@ Including another URLconf
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.contrib import admin
 from django.urls import include, path
-from django.conf.urls import url
+#from django.conf.urls import url
 
-from prototype.views import *
+from core.views import *
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     path('react-test/', ReactView.as_view(), name="React Test")
 ]
