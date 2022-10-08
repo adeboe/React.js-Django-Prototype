@@ -23,9 +23,9 @@ activate.bat
 This is done while in the virtual environment (via activate.bat)
 Here are the commands for the Django dependencies:
 ```
-py -m pip install Django
-py -m pip install djangorestframework
-py -m pip install django-cors-headers
+pip3 install Django
+pip3 install djangorestframework
+pip3 install django-cors-headers
 ```
 
 ### Create Django Project
