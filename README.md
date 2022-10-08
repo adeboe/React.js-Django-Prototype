@@ -19,15 +19,12 @@ After this, you should now be in the virtual environment. At this point, you can
 py task-6-ui-back-end\prototype\manage.py runserver
 ```
 
-If successful, you should be able to access `http://localhost:8000/test/` and see the Django REST Framework on
-the top left corner.
+If successful, you should be able to access `http://localhost:8000/test/` and see the Django REST Framework on the top left corner.
 
 ### Front-end
-Open up another terminal at the project directory (i.e. where this file is), and all you have to
-do is run the following command
+Open up another terminal at the project directory (i.e. where this file is), and all you have to do is run the following command
 ```
 npm start
 ```
 
-If successful, you should be able to see a page containing `SER401 - Task 6 (UI) Prototype` on the top
-of the page.
+If successful, you should be able to see a page when going to `http://localhost:3000/`, which contains `SER401 - Task 6 (UI) Prototype` on the top of the page.
