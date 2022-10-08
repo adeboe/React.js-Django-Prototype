@@ -20,7 +20,7 @@ import axios from 'axios';
 class App extends React.Component {
 	
 	// Used to store data from back-end
-	currentState = {
+	state = {
 		back_end_data : [],
 	}
 	
@@ -29,11 +29,11 @@ class App extends React.Component {
 		
 		let data;
 		
-		axios.get('http://localhost:8000/react-test/') // Our Django Web Server
+		axios.get('http://localhost:8000/test/') // Our Django Web Server
 		.then(response => {
 			data = response.data;
-			this.setCurrentState({
-				back_end_data : data;
+			this.setState({
+				back_end_data : data
 			});
 		})
 		.catch(error => {})
@@ -43,30 +43,23 @@ class App extends React.Component {
 	// Renders a page for the user to see
 	render() {
 		return (
-			//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			// HTML Here
-			
-			<div className="homepage">
-				<h1>SER401 - Task 6 (UI) Prototype</h2>
-				<hr>
+		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		// HTML Here
+		<div className="TestPage">
+			<h1>SER401 - Task 6 (UI) Prototype</h1>
+			<hr/>
 				
-				// Take data from back-end and display it.
-				{this.currentState.back_end_data.map((data, id) => (
-				
-					<div key={id}>
-						<h2>Condition</h2>
-						<p>{data.condition}</p>
-						<hr>
-						<h2>Description</h2>
-						<p>{data.description}</p>
-						<hr>
-					</div>
-					
-				)}
-
+			{this.state.back_end_data.map((data, id) => (
+			<div key={id}>
+				<h2>Condition</h2>
+				<p>{data.condition}</p>
+				<h2>Description</h2>
+				<p>{data.description}</p>
+				<hr/>
 			</div>
-			
-			//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			))}
+		</div>
+		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		);
 	}
 }

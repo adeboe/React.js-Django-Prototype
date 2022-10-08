@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',               # for djangorestframework
     'prototype',                    # for the prototype
     'corsheaders',                  # for django-cors-headers
+    'core',
 ]
 
 MIDDLEWARE = [

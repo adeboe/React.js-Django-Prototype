@@ -4,6 +4,7 @@
 #
 # References:
 # https://www.geeksforgeeks.org/how-to-connect-django-with-reactjs/
+# https://www.bezkoder.com/django-rest-api/
 #
 # @author   Allan DeBoe
 # @date     October 7th, 2022
@@ -13,5 +14,6 @@ from django.db import models
 
 # Create your models here.
 class React(models.Model):
-    description = models.CharField(max_length=2048)
-    condition = models.CharField(max_length=256)
+    name = models.CharField(max_length=64, blank=False, default='')
+    description = models.CharField(max_length=2048, blank=False, default='')
+    condition = models.CharField(max_length=256, blank=False, default='')

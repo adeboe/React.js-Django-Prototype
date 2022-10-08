@@ -14,4 +14,4 @@ from . models import *
 class ReactSerializer(serializers.ModelSerializer):
     class Meta:
         model = React
-        fields = ['description','condition']
+        fields = ['name','description','condition']

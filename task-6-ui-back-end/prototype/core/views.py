@@ -10,11 +10,11 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 from django.shortcuts import render
 from rest_framework.views import APIView
-from rest_framework.respoonse import Response
+from rest_framework.response import Response # respooooooonse (I am losing brain cells)
 from . models import *
 from . serializer import *
 
@@ -27,7 +27,8 @@ class ReactView(APIView):
 
     # Handles GET requests
     def get(self, request):
-        data = [ {
+        data = [{
+            'name': obj.name,
             'description': obj.description,
             'condition': obj.condition,
         } for obj in React.objects.all()]
@@ -36,6 +37,11 @@ class ReactView(APIView):
     # Handles POST requests
     def post(self, request):
         serializer = ReactSerializer(data=request.data)
-        if serializer.is_valid(raise_exception=True)
+        if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
+
+    # Handles DELETE requests
+    def delete(self, request):
+        count = React.objects.all().delete()
+        return JsonResponse({'message': 'the data was successfully deleted'})
