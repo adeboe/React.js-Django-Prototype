@@ -9,7 +9,7 @@
  */
  
 // Import Static Data
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 // Import JavaScript Libraries
@@ -51,6 +51,8 @@ class App extends React.Component {
 				
 			{this.state.back_end_data.map((data, id) => (
 			<div key={id}>
+				<h2>Name</h2>
+				<p>{data.name}</p>
 				<h2>Condition</h2>
 				<p>{data.condition}</p>
 				<h2>Description</h2>
