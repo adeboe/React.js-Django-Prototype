@@ -4,6 +4,11 @@ This is a small prototype that uses Django and React.js to get myself familiar w
 ## Installation Details
 First, it is important to install Python (at least version 3.10.7). It is also important to install Node.js (primarily for the Node Package Manager or `npm`, which will be used to help run the front-end).
 
+You will need to install Django and Django framework along with the headers, run the following commands in the windows terminal:
+- ```pip install django```
+- ```pip install djangorestframework```
+- ```pip install django-cors-headers```
+
 Next, download the repo, which is a python virtual environment that should work on at least Windows 10. 
 
 ## Running The Prototype
