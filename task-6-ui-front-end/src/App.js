@@ -53,8 +53,12 @@ class App extends React.Component {
 			<div key={id}>
 				<h2>Name</h2>
 				<p>{data.name}</p>
-				<h2>Condition</h2>
-				<p>{data.condition}</p>
+				<h2>General Information</h2>
+				<p><b>Condition</b>: 			<i>{data.condition}</i></p>
+				<p><b>Date Checked In</b>:		<i>{data.date_checked_in}</i></p>
+				<p><b>Date Checked Out</b>:	<i>{data.date_checked_out}</i></p>
+				<p><b>Location</b>:			<i>{data.location}</i></p>
+				<p><b>Check Out By</b>:		<i>{data.check_out_by}</i></p>
 				<h2>Description</h2>
 				<p>{data.description}</p>
 				<hr/>

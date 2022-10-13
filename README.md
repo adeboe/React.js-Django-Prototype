@@ -24,6 +24,7 @@ If successful, you should be able to access `http://localhost:8000/test/` and se
 ### Front-end
 Open up another terminal at the project directory (i.e. where this file is), and all you have to do is run the following command
 ```
+cd task-6-ui-front-end
 npm start
 ```
 

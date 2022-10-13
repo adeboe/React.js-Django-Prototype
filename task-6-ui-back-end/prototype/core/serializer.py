@@ -6,7 +6,7 @@
 # https://www.geeksforgeeks.org/how-to-connect-django-with-reactjs/
 #
 # @author   Allan DeBoe
-# @date     October 2nd, 2022
+# @date     October 12th, 2022
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from rest_framework import serializers
 from . models import *
@@ -14,4 +14,4 @@ from . models import *
 class ReactSerializer(serializers.ModelSerializer):
     class Meta:
         model = React
-        fields = ['name','description','condition']
+        fields = ['name','description','date_checked_in','date_checked_out','condition','location','check_out_by']

@@ -5,7 +5,7 @@
 # https://www.geeksforgeeks.org/how-to-connect-django-with-reactjs/
 #
 # @author   Allan DeBoe
-# @date     October 7th, 2022
+# @date     October 12th, 2022
 # @since    September 29th, 2022
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -30,7 +30,11 @@ class ReactView(APIView):
         data = [{
             'name': obj.name,
             'description': obj.description,
+            'date_checked_in': obj.date_checked_in,
+            'date_checked_out': obj.date_checked_out,
             'condition': obj.condition,
+            'location': obj.location,
+            'check_out_by': obj.check_out_by,
         } for obj in React.objects.all()]
         return Response(data)
 
