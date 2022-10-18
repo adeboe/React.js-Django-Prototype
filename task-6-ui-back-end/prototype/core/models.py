@@ -7,18 +7,23 @@
 # https://www.bezkoder.com/django-rest-api/
 #
 # @author   Allan DeBoe
-# @date     October 15th, 2022
+# @date     October 17th, 2022
 # @since    October 2nd, 2022
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from datetime import date
+
 from django.db import models
 from django.utils import timezone
+from django.core.exceptions import ValidationError
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Create your models here.
+
 class React(models.Model):
     name = models.CharField(max_length=64, blank=False, default='') 
     description = models.TextField()
     date_checked_in = models.DateField(default=timezone.now)
-    date_checked_out = models.DateField()
+    date_checked_out = models.DateField(blank=True)
     condition = models.CharField(max_length=256, blank=False, default='')
     location = models.CharField(max_length=256, blank=True, default='')
-    check_out_by = models.DateField()
+    check_out_by = models.DateField(default=timezone.now)
