@@ -1,4 +1,4 @@
-# SER401-Django-React.js-UI-Prototype
+# React.js-Django-Prototype
 This is a small prototype that uses Django and React.js to get myself familiar with those technologies for the larger project my team will be working on.
 
 ## Installation Details
